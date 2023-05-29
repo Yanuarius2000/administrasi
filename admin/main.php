@@ -20,7 +20,7 @@ if (!isset($_SESSION['id_admin'])) {
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Admin</title>
-    <!-- <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" /> -->
+    <!-- <lik href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" /> -->
     <link href="css/styles.css" rel="stylesheet" />
 
     <!-- DATATABLES -->
