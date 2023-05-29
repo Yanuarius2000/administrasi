@@ -443,7 +443,15 @@
                                             <td><?= $data['izin_usaha_nama']; ?></td>
                                             <td><?= $data['izin_usaha_nama_pemilik']; ?></td>
                                             <td><?= $data['izin_usaha_tanggal']; ?></td>
-                                            <td><?= $data['izin_usaha_status']; ?></td>
+                                            <td>
+                                                <?php
+                                                if ($data['izin_usaha_status'] == 'Permintaan ditolak RT') {
+                                                    echo $data['izin_usaha_status'] . '(' . $data['izin_usaha_ket'] . ')';
+                                                } else {
+                                                    echo $data['izin_usaha_status'];
+                                                }
+                                                ?>
+                                            </td>
                                             <td>
                                                 <a href="?page=detail&adm=izin_usaha&id=<?= $data['izin_usaha_id'] ?>" class="btn btn-sm btn-info"><i class="fas fa-info-circle"></i></a>
                                             </td>

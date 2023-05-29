@@ -85,6 +85,7 @@ if ($adm == 'ktp') {
     $st = '';
     if ($status == 'konfirmasi_rt') {
         $st = 'Telah dikonfirmasi RT';
+        $alasan = '';
     } else {
         $st = 'Permintaan ditolak RT';
     }

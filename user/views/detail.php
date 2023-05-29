@@ -382,7 +382,6 @@ $id = $_GET['id'];
             $sql = mysqli_query($con, "SELECT * FROM izin_usaha, user WHERE izin_usaha.izin_usaha_user = user.user_id AND izin_usaha.izin_usaha_id = '$id'");
             $data = mysqli_fetch_assoc($sql);
         ?>
-            ?>
             <h2 class="text-dark">Izin Usaha | <small> <?= $data['user_nama'] ?></small></h2>
             <table class="table table-hover">
                 <tr>
@@ -425,7 +424,15 @@ $id = $_GET['id'];
                 <tr>
                     <th>Status</th>
                     <th>:</th>
-                    <th><?= $data['izin_usaha_status'] ?></th>
+                    <th>
+                        <?php
+                        if ($data['izin_usaha_status'] == 'Permintaan ditolak RT') {
+                            echo $data['izin_usaha_status'] . '(' . $data['izin_usaha_ket'] . ')';
+                        } else {
+                            echo $data['izin_usaha_status'];
+                        }
+                        ?>
+                    </th>
                 </tr>
             </table>
             <?php
@@ -436,7 +443,42 @@ $id = $_GET['id'];
                         <a href="?page=verifikasi&adm=izin_usaha&status=konfirmasi_rt&id=<?= $data['izin_usaha_id'] ?>" class="btn btn-sm btn-success btn-block" onclick="return confirm('Yakin ingin konfirmasi permintaan ini ?')">Konfirmasi</a>
                     </div>
                     <div class="col-lg-6">
-                        <a href="?page=verifikasi&adm=izin_usaha&status=tolak&id=<?= $data['izin_usaha_id'] ?>" class="btn btn-sm btn-danger btn-block" onclick="return confirm('Yakin ingin menolak permintaan ini ?')">Tolak Permintaan</a>
+                        <a href="#" class="btn btn-sm btn-danger btn-block" data-toggle="modal" data-target="#tolakIzinUsaha<?= $data['izin_usaha_id'] ?>">Tolak Permintaan</a>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="tolakIzinUsaha<?= $data['izin_usaha_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <form action="" method="post">
+                                        <div class="modal-body">
+                                            <label for="">Alasan :</label>
+                                            <input type="hidden" class="form-control" name="izin_usaha_id" value="<?= $data['izin_usaha_id'] ?>" required>
+                                            <input type="text" class="form-control" name="izin_usaha_ket" required>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <input type="submit" name="simpan_izin_usaha" class="btn btn-primary" value="Kirim">
+                                        </div>
+                                    </form>
+                                    <?php
+                                    if (isset($_POST['simpan_izin_usaha'])) {
+                                        $izin_usaha_ket = $_POST['izin_usaha_ket'];
+                                        $izin_usaha_id = $_POST['izin_usaha_id'];
+
+                                        $sql_izin_usaha = mysqli_query($con, "UPDATE izin_usaha SET izin_usaha_ket = '$izin_usaha_ket' WHERE izin_usaha_id = '$izin_usaha_id'");
+
+                                        echo "<script>window.location='?page=verifikasi&adm=izin_usaha&status=tolak&id=$izin_usaha_id';</script>";
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             <?php

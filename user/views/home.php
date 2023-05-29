@@ -290,8 +290,9 @@
 
                 $izin_usaha_status = 'Menunggu Verifikasi RT';
                 $izin_usaha_tanggal_verifikasi = '';
+                $izin_usaha_ket = '';
 
-                $sql = mysqli_query($con, "INSERT INTO izin_usaha VALUES('', '$izin_usaha_user', '$izin_usaha_rt', '$izin_usaha_tanggal', '$izin_usaha_nama', '$izin_usaha_alamat', '$izin_usaha_nama_pemilik', '$izin_usaha_nik', '$izin_usaha_ktp', '$izin_usaha_status', '$izin_usaha_tanggal_verifikasi')");
+                $sql = mysqli_query($con, "INSERT INTO izin_usaha VALUES('', '$izin_usaha_user', '$izin_usaha_rt', '$izin_usaha_tanggal', '$izin_usaha_nama', '$izin_usaha_alamat', '$izin_usaha_nama_pemilik', '$izin_usaha_nik', '$izin_usaha_ktp', '$izin_usaha_status', '$izin_usaha_tanggal_verifikasi', '$izin_usaha_ket')");
 
                 if ($sql) {
                     echo "<script>alert('Permintaan anda berhasil dikirim !');window.location='?page=home';</script>";
