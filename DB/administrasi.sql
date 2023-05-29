@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Nov 2022 pada 13.22
--- Versi server: 10.4.24-MariaDB
--- Versi PHP: 7.4.29
+-- Generation Time: May 29, 2023 at 05:30 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -36,7 +36,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`admin_id`, `admin_nama`, `admin_username`, `admin_password`, `admin_status`) VALUES
@@ -45,7 +45,7 @@ INSERT INTO `admin` (`admin_id`, `admin_nama`, `admin_username`, `admin_password
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `administrasi`
+-- Table structure for table `administrasi`
 --
 
 CREATE TABLE `administrasi` (
@@ -58,7 +58,7 @@ CREATE TABLE `administrasi` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `domisili`
+-- Table structure for table `domisili`
 --
 
 CREATE TABLE `domisili` (
@@ -73,17 +73,19 @@ CREATE TABLE `domisili` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `domisili`
+-- Dumping data for table `domisili`
 --
 
 INSERT INTO `domisili` (`domisili_id`, `domisili_user`, `domisili_rt`, `domisili_tanggal`, `domisili_ktp`, `domisili_kk`, `domisili_status`, `domisili_tanggal_verifikasi`) VALUES
-(1, 3, 1, '2022-10-11', 'Mafer Fernandez Leite-Domisili-ktp1665472628.pdf', 'Mafer Fernandez Leite-Domisili-kk1665472628.jpeg', 'Selesai', '2022-10-19'),
-(2, 10, 1, '2022-11-27', 'nato soares-Domisili-ktp1669551223.png', 'nato soares-Domisili-kk1669551223.jpg', 'Selesai', '2022-11-27');
+(2, 10, 1, '2022-11-27', 'nato soares-Domisili-ktp1669551223.png', 'nato soares-Domisili-kk1669551223.jpg', 'Selesai', '2022-11-27'),
+(3, 11, 1, '2023-02-11', 'ikson moruk-Domisili-ktp1676114971.jpg', 'ikson moruk-Domisili-kk1676114971.jpg', 'Selesai', '2023-02-11'),
+(4, 11, 1, '2023-02-11', 'ikson moruk-Domisili-ktp1676115066.', 'ikson moruk-Domisili-kk1676115066.', 'Selesai', '2023-02-11'),
+(5, 11, 1, '2023-02-12', 'ikson moruk-Domisili-ktp1676210127.jpg', 'ikson moruk-Domisili-kk1676210127.jpg', 'Telah dikonfirmasi RT', '0000-00-00');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `izin_usaha`
+-- Table structure for table `izin_usaha`
 --
 
 CREATE TABLE `izin_usaha` (
@@ -97,21 +99,25 @@ CREATE TABLE `izin_usaha` (
   `izin_usaha_nik` varchar(255) NOT NULL,
   `izin_usaha_ktp` text NOT NULL,
   `izin_usaha_status` varchar(255) NOT NULL,
-  `izin_usaha_tanggal_verifikasi` date NOT NULL
+  `izin_usaha_tanggal_verifikasi` date NOT NULL,
+  `izin_usaha_ket` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `izin_usaha`
+-- Dumping data for table `izin_usaha`
 --
 
-INSERT INTO `izin_usaha` (`izin_usaha_id`, `izin_usaha_user`, `izin_usaha_rt`, `izin_usaha_tanggal`, `izin_usaha_nama`, `izin_usaha_alamat`, `izin_usaha_nama_pemilik`, `izin_usaha_nik`, `izin_usaha_ktp`, `izin_usaha_status`, `izin_usaha_tanggal_verifikasi`) VALUES
-(1, 3, 1, '2022-10-07', 'Tess Usaha', 'Di Tes saja', 'Mafer G', '0984638393567', 'Mafer Fernandez Leite - Izin Usaha - 1665130790.jpeg', 'Selesai', '2022-10-19'),
-(2, 9, 1, '2022-11-27', 'mebel', 'duabesi', 'ikson', '1234567', 'ikson moruk - Izin Usaha KTP - 1669549784.png', 'Selesai', '2022-11-27');
+INSERT INTO `izin_usaha` (`izin_usaha_id`, `izin_usaha_user`, `izin_usaha_rt`, `izin_usaha_tanggal`, `izin_usaha_nama`, `izin_usaha_alamat`, `izin_usaha_nama_pemilik`, `izin_usaha_nik`, `izin_usaha_ktp`, `izin_usaha_status`, `izin_usaha_tanggal_verifikasi`, `izin_usaha_ket`) VALUES
+(2, 9, 1, '2022-11-27', 'mebel', 'duabesi', 'ikson', '1234567', 'ikson moruk - Izin Usaha KTP - 1669549784.png', 'Selesai', '2022-11-27', ''),
+(3, 11, 1, '2023-02-11', 'Mebel', 'jln. Sabuk merah, Duabesi.', 'Ikson', '12345678', 'ikson moruk - Izin Usaha KTP - 1676115693.jpg', 'Selesai', '2023-02-11', ''),
+(4, 11, 1, '2023-02-11', 'Bengkel', 'Duabesi 2', 'Ikson Moruk', '12345678', 'ikson moruk - Izin Usaha KTP - 1676117108.jpg', 'Selesai', '2023-02-12', ''),
+(6, 11, 1, '2023-05-09', 'bengkel las', 'motakmarak', 'Ikson Moruk', '12345678', 'ikson moruk - Izin Usaha KTP - 1683639024.jpg', 'Selesai', '2023-05-09', ''),
+(7, 11, 1, '2023-05-29', 'Mebel', 'penfui', 'Ikson Moruk', '12345678', 'ikson moruk - Izin Usaha KTP - 1685371171.jpg', 'Permintaan ditolak RT', '0000-00-00', 'Tes alasan');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jenis_administrasi`
+-- Table structure for table `jenis_administrasi`
 --
 
 CREATE TABLE `jenis_administrasi` (
@@ -120,7 +126,7 @@ CREATE TABLE `jenis_administrasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `jenis_administrasi`
+-- Dumping data for table `jenis_administrasi`
 --
 
 INSERT INTO `jenis_administrasi` (`jenis_administrasi_id`, `jenis_administrasi_nama`) VALUES
@@ -130,7 +136,7 @@ INSERT INTO `jenis_administrasi` (`jenis_administrasi_id`, `jenis_administrasi_n
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kelahiran`
+-- Table structure for table `kelahiran`
 --
 
 CREATE TABLE `kelahiran` (
@@ -153,16 +159,17 @@ CREATE TABLE `kelahiran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `kelahiran`
+-- Dumping data for table `kelahiran`
 --
 
 INSERT INTO `kelahiran` (`kelahiran_id`, `kelahiran_user`, `kelahiran_rt`, `kelahiran_tanggal`, `kelahiran_nama`, `kelahiran_jk`, `kelahiran_tempat_lahir`, `kelahiran_tanggal_lahir`, `kelahiran_kk`, `kelahiran_ktp_ayah`, `kelahiran_nama_ayah`, `kelahiran_ktp_ibu`, `kelahiran_nama_ibu`, `kelahiran_sk_dokter`, `kelahiran_status`, `kelahiran_tanggal_verifikasi`) VALUES
-(1, 3, 1, '2022-10-10', 'Denadu', 'Laki-laki', 'Tes', '2021-05-10', 'Mafer Fernandez Leite-Kelahiran-KK-1665391020.jpeg', 'Mafer Fernandez Leite-Kelahiran-KTP Ayah-1665391020.jpeg', 'Tes Ayah', 'Mafer Fernandez Leite-Kelahiran-KTP Ibu1665391020.pdf', 'Tes Ibu', 'Mafer Fernandez Leite-Kelahiran-SK Dokter1665391020.jpeg', 'Selesai', '2022-10-19');
+(1, 3, 1, '2022-10-10', 'Denadu', 'Laki-laki', 'Tes', '2021-05-10', 'Mafer Fernandez Leite-Kelahiran-KK-1665391020.jpeg', 'Mafer Fernandez Leite-Kelahiran-KTP Ayah-1665391020.jpeg', 'Tes Ayah', 'Mafer Fernandez Leite-Kelahiran-KTP Ibu1665391020.pdf', 'Tes Ibu', 'Mafer Fernandez Leite-Kelahiran-SK Dokter1665391020.jpeg', 'Selesai', '2022-10-19'),
+(2, 11, 1, '2023-02-11', 'Risal', 'Laki-laki', 'duabesi', '2023-02-11', 'ikson moruk-Kelahiran-KK-1676115176.jpg', 'ikson moruk-Kelahiran-KTP Ayah-1676115176.jpg', 'Norman', 'ikson moruk-Kelahiran-KTP Ibu1676115176.jpg', 'Ursula', 'ikson moruk-Kelahiran-SK Dokter1676115176.jpg', 'Selesai', '2023-02-11');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kematian`
+-- Table structure for table `kematian`
 --
 
 CREATE TABLE `kematian` (
@@ -179,16 +186,16 @@ CREATE TABLE `kematian` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `kematian`
+-- Dumping data for table `kematian`
 --
 
 INSERT INTO `kematian` (`kematian_id`, `kematian_user`, `kematian_rt`, `kematian_tanggal`, `kematian_user_meninggal`, `kematian_tempat_meninggal`, `kematian_tanggal_meninggal`, `kematian_sk_dokter`, `kematian_status`, `kematian_tanggal_verifikasi`) VALUES
-(2, 3, 1, '2022-10-10', 1, 'Tes', '2022-10-09', 'Mafer Fernandez Leite-Kematian-SK Dokter1665391160.pdf', 'Selesai', '2022-10-19');
+(6, 11, 1, '2023-02-11', 6, 'duabesi', '2023-12-11', 'ikson moruk-Kematian-SK Dokter1676115066.jpg', 'Selesai', '2023-02-11');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kk`
+-- Table structure for table `kk`
 --
 
 CREATE TABLE `kk` (
@@ -203,16 +210,20 @@ CREATE TABLE `kk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `kk`
+-- Dumping data for table `kk`
 --
 
 INSERT INTO `kk` (`kk_id`, `kk_user`, `kk_rt`, `kk_tanggal`, `kk_akte`, `kk_surat_nikah`, `kk_status`, `kk_tanggal_verifikasi`) VALUES
-(3, 3, 1, '2022-10-16', 'Mafer Fernandez Leite - KK Akte - 1665931089.docx', 'Mafer Fernandez Leite - KK Surat Nikah - 1665931089.jpeg', 'Selesai', '2022-10-19');
+(5, 11, 1, '2023-02-03', 'ikson moruk - KK Akte - 1675354317.jpg', 'ikson moruk - KK Surat Nikah - 1675354317.jpg', 'Selesai', '2023-02-03'),
+(6, 11, 1, '2023-02-06', 'ikson moruk - KK Akte - 1675624604.jpg', 'ikson moruk - KK Surat Nikah - 1675624604.jpg', 'Selesai', '2023-02-06'),
+(7, 11, 1, '2023-02-09', 'ikson moruk - KK Akte - 1675944723.jpg', 'ikson moruk - KK Surat Nikah - 1675944723.jpg', 'Selesai', '2023-02-09'),
+(8, 11, 1, '2023-02-11', 'ikson moruk - KK Akte - 1676130617.jpg', 'ikson moruk - KK Surat Nikah - 1676130618.jpg', 'Permintaan ditolak RT', '0000-00-00'),
+(9, 11, 1, '2023-02-21', 'ikson moruk - KK Akte - 1676974830.jpg', 'ikson moruk - KK Surat Nikah - 1676974830.jpg', 'Telah dikonfirmasi RT', '0000-00-00');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `ktp`
+-- Table structure for table `ktp`
 --
 
 CREATE TABLE `ktp` (
@@ -228,18 +239,20 @@ CREATE TABLE `ktp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `ktp`
+-- Dumping data for table `ktp`
 --
 
 INSERT INTO `ktp` (`ktp_id`, `ktp_user`, `ktp_rt`, `ktp_tanggal`, `ktp_kk`, `ktp_alamat`, `ktp_lama`, `ktp_status`, `ktp_tanggal_verifikasi`) VALUES
 (1, 3, 1, '2022-10-10', 'Mafer Fernandez Leite - KTP - 1665378110.docx', 'Tes Alamat', 'Mafer Fernandez Leite - KTP - 1665378110.jpeg', 'Selesai', '2022-10-18'),
 (2, 5, 1, '2022-11-23', 'Mafer Leite - KTP KK - 1669165159.png', 'Dusun A', 'Mafer Leite - KTP Lama - 1669165159.jpg', 'Selesai', '2022-11-23'),
-(3, 5, 1, '2022-11-23', 'Mafer Leite - KTP KK - 1669166171.png', 'Dusun 2', 'Mafer Leite - KTP Lama - 1669166171.jpg', 'Selesai', '2022-11-23');
+(3, 5, 1, '2022-11-23', 'Mafer Leite - KTP KK - 1669166171.png', 'Dusun 2', 'Mafer Leite - KTP Lama - 1669166171.jpg', 'Selesai', '2022-11-23'),
+(4, 11, 1, '2023-02-11', 'ikson moruk - KTP KK - 1676115744.jpg', 'Duabesi 1', 'ikson moruk - KTP Lama - 1676115744.jpg', 'Selesai', '2023-02-11'),
+(5, 11, 1, '2023-02-12', 'ikson moruk - KTP KK - 1676209634.jpg', 'duabesi 2', 'ikson moruk - KTP Lama - 1676209634.jpg', 'Permintaan ditolak RT', '0000-00-00');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pindah`
+-- Table structure for table `pindah`
 --
 
 CREATE TABLE `pindah` (
@@ -258,18 +271,19 @@ CREATE TABLE `pindah` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `pindah`
+-- Dumping data for table `pindah`
 --
 
 INSERT INTO `pindah` (`pindah_id`, `pindah_user`, `pindah_rt`, `pindah_tanggal`, `pindah_ket`, `pindah_dari`, `pindah_tujuan`, `pindah_nik`, `pindah_ktp`, `pindah_akte`, `pindah_status`, `pindah_tanggal_verifikasi`) VALUES
-(1, 3, 1, '2022-10-07', 'Masuk', '', '', '13245678909876', 'Mafer Fernandez Leite - KTP - 1665113763.jpeg', 'Mafer Fernandez Leite - AKTE - 1665113763.jpeg', 'Selesai', '2022-10-19'),
 (2, 6, 1, '2022-10-26', 'Masuk', '', '', '1234567', 'ikson - Pindah KTP - 1666788459.png', 'ikson - Pindah AKTE - 1666788459.jpg', 'Selesai', '2022-10-26'),
-(3, 5, 1, '2022-11-21', 'Keluar', 'Dualasi', 'Kupang', '23114046', 'Mafer Leite - Pindah KTP - 1669009935.jpg', 'Mafer Leite - Pindah AKTE - 1669009935.jpg', 'Selesai', '2022-11-21');
+(4, 11, 1, '2023-02-11', 'Masuk', 'penfui', 'dualasi', '12345678', 'ikson moruk - Pindah KTP - 1676121780.jpg', 'ikson moruk - Pindah AKTE - 1676121781.jpg', 'Selesai', '2023-02-11'),
+(5, 11, 1, '2023-05-28', 'Masuk', 'penfui', 'dualasi', '1234567', 'ikson moruk - Pindah KTP - 1685272509.jpg', 'ikson moruk - Pindah AKTE - 1685272509.jpg', 'Selesai', '2023-05-28'),
+(6, 11, 1, '2023-05-29', 'Masuk', 'penfui', 'dualasi', '1234567', 'ikson moruk - Pindah KTP - 1685349211.jpg', 'ikson moruk - Pindah AKTE - 1685349211.jpg', 'Selesai', '2023-05-29');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `rt`
+-- Table structure for table `rt`
 --
 
 CREATE TABLE `rt` (
@@ -280,18 +294,20 @@ CREATE TABLE `rt` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `rt`
+-- Dumping data for table `rt`
 --
 
 INSERT INTO `rt` (`rt_id`, `rt_nama`, `rw_id`, `rt_ketua_id`) VALUES
 (1, '001', 1, 1),
 (2, '002', 1, 0),
-(3, '003', 1, 0);
+(3, '003', 1, 0),
+(4, '004', 1, 0),
+(5, '005', 1, 0);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `rw`
+-- Table structure for table `rw`
 --
 
 CREATE TABLE `rw` (
@@ -301,7 +317,7 @@ CREATE TABLE `rw` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `rw`
+-- Dumping data for table `rw`
 --
 
 INSERT INTO `rw` (`rw_id`, `rw_nama`, `rw_ketua_id`) VALUES
@@ -310,7 +326,7 @@ INSERT INTO `rw` (`rw_id`, `rw_nama`, `rw_ketua_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -330,182 +346,181 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`user_id`, `user_nama`, `user_tempat_lahir`, `user_tgl_lahir`, `user_jk`, `user_rt_id`, `user_rw_id`, `user_wa`, `user_status_perkawinan`, `user_pekerjaan`, `user_status`, `user_email`, `user_password`) VALUES
 (1, 'Tes RT 001 RW 001', 'Kupang', '1999-09-09', 'Laki-laki', 1, 1, '085337025611', 'Belum Menikah', 'Pelajar/Mahasiswa', 'Aktif', 'tes@gmail.com', '28b662d883b6d76fd96e4ddc5e9ba780'),
-(3, 'Mafer Fernandez Leite', 'Naibonat', '1992-10-10', 'Perempuan', 1, 1, '08123456789', 'Belum Menikah', 'Wiraswasta', 'Aktif', 'tes2@gmail.com', '7a8a80e50f6ff558f552079cefe2715d'),
-(5, 'Mafer Leite', 'Larantuka', '1996-09-24', 'Laki-laki', 1, 1, '085337025611', 'Sudah Menikah', 'Karyawan Swasta', 'Aktif', 'manfdz70@gmail.com', '4c08ab9ef09bd1575f65fcd022dd5f83'),
 (6, 'ikson', 'atambua', '2000-12-01', 'Laki-laki', 1, 1, '09999', 'Belum Menikah', 'Pelajar/Mahasiswa', 'Aktif', 'ikson@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055'),
 (7, 'Tes tambah orang RT 3', 'Tes rt3', '2000-09-10', 'Laki-laki', 3, 1, '08539864885', 'Belum Menikah', 'Karyawan Swasta', 'Aktif', 'tesorang3@gmail.com', 'd02aae65ebfb8f3ce0abde7d59016e79'),
-(8, 'Mafer Leite', 'Larantuka', '1996-09-24', 'Laki-laki', 2, 1, '085337025611', 'Belum Menikah', 'Karyawan Swasta', 'Aktif', 'manfdz70@gmail.com', '4c08ab9ef09bd1575f65fcd022dd5f83'),
-(9, 'ikson moruk', 'duabesi', '2000-12-01', 'Laki-laki', 1, 1, '082146894618', 'Belum Menikah', 'Pelajar/Mahasiswa', 'Aktif', 'iksonmoruk17@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055'),
-(10, 'nato soares', 'timor', '1119-12-11', 'Laki-laki', 1, 1, '11654', 'Belum Menikah', 'Pelajar/Mahasiswa', 'Aktif', 'natalioluansoares@gmail.com', 'd93591bdf7860e1e4ee2fca799911215');
+(11, 'ikson moruk', 'duabesi', '2000-01-16', 'Laki-laki', 1, 1, '082146894618', 'Belum Menikah', 'Pelajar/Mahasiswa', 'Aktif', 'morukbere@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b'),
+(12, 'jose Elu', 'kefa', '1997-02-23', 'Laki-laki', 1, 1, '082236488612', 'Belum Menikah', 'Pelajar/Mahasiswa', 'Non-Aktif', 'elunormandius@gmail.com', 'e10adc3949ba59abbe56e057f20f883e'),
+(13, 'viviani', 'flores', '1999-08-26', 'Perempuan', 1, 1, '081146894618', 'Belum Menikah', 'Pelajar/Mahasiswa', 'Non-Aktif', 'vivianiladommuke@gmail.com', 'e10adc3949ba59abbe56e057f20f883e'),
+(14, 'ikson moruk', 'dualasi', '2000-01-16', 'Laki-laki', 1, 1, '082146894618', 'Belum Menikah', 'Pelajar/Mahasiswa', 'Menunggu Konfirmasi', 'morukbere@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`admin_id`);
 
 --
--- Indeks untuk tabel `administrasi`
+-- Indexes for table `administrasi`
 --
 ALTER TABLE `administrasi`
   ADD PRIMARY KEY (`administrasi_id`);
 
 --
--- Indeks untuk tabel `domisili`
+-- Indexes for table `domisili`
 --
 ALTER TABLE `domisili`
   ADD PRIMARY KEY (`domisili_id`);
 
 --
--- Indeks untuk tabel `izin_usaha`
+-- Indexes for table `izin_usaha`
 --
 ALTER TABLE `izin_usaha`
   ADD PRIMARY KEY (`izin_usaha_id`);
 
 --
--- Indeks untuk tabel `jenis_administrasi`
+-- Indexes for table `jenis_administrasi`
 --
 ALTER TABLE `jenis_administrasi`
   ADD PRIMARY KEY (`jenis_administrasi_id`);
 
 --
--- Indeks untuk tabel `kelahiran`
+-- Indexes for table `kelahiran`
 --
 ALTER TABLE `kelahiran`
   ADD PRIMARY KEY (`kelahiran_id`);
 
 --
--- Indeks untuk tabel `kematian`
+-- Indexes for table `kematian`
 --
 ALTER TABLE `kematian`
   ADD PRIMARY KEY (`kematian_id`);
 
 --
--- Indeks untuk tabel `kk`
+-- Indexes for table `kk`
 --
 ALTER TABLE `kk`
   ADD PRIMARY KEY (`kk_id`);
 
 --
--- Indeks untuk tabel `ktp`
+-- Indexes for table `ktp`
 --
 ALTER TABLE `ktp`
   ADD PRIMARY KEY (`ktp_id`);
 
 --
--- Indeks untuk tabel `pindah`
+-- Indexes for table `pindah`
 --
 ALTER TABLE `pindah`
   ADD PRIMARY KEY (`pindah_id`);
 
 --
--- Indeks untuk tabel `rt`
+-- Indexes for table `rt`
 --
 ALTER TABLE `rt`
   ADD PRIMARY KEY (`rt_id`);
 
 --
--- Indeks untuk tabel `rw`
+-- Indexes for table `rw`
 --
 ALTER TABLE `rw`
   ADD PRIMARY KEY (`rw_id`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `admin`
+-- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `administrasi`
+-- AUTO_INCREMENT for table `administrasi`
 --
 ALTER TABLE `administrasi`
   MODIFY `administrasi_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `domisili`
+-- AUTO_INCREMENT for table `domisili`
 --
 ALTER TABLE `domisili`
-  MODIFY `domisili_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `domisili_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `izin_usaha`
+-- AUTO_INCREMENT for table `izin_usaha`
 --
 ALTER TABLE `izin_usaha`
-  MODIFY `izin_usaha_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `izin_usaha_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `jenis_administrasi`
+-- AUTO_INCREMENT for table `jenis_administrasi`
 --
 ALTER TABLE `jenis_administrasi`
   MODIFY `jenis_administrasi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `kelahiran`
+-- AUTO_INCREMENT for table `kelahiran`
 --
 ALTER TABLE `kelahiran`
-  MODIFY `kelahiran_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `kelahiran_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `kematian`
+-- AUTO_INCREMENT for table `kematian`
 --
 ALTER TABLE `kematian`
-  MODIFY `kematian_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `kematian_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `kk`
+-- AUTO_INCREMENT for table `kk`
 --
 ALTER TABLE `kk`
-  MODIFY `kk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `kk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT untuk tabel `ktp`
+-- AUTO_INCREMENT for table `ktp`
 --
 ALTER TABLE `ktp`
-  MODIFY `ktp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ktp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `pindah`
+-- AUTO_INCREMENT for table `pindah`
 --
 ALTER TABLE `pindah`
-  MODIFY `pindah_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `pindah_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `rt`
+-- AUTO_INCREMENT for table `rt`
 --
 ALTER TABLE `rt`
-  MODIFY `rt_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `rt_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `rw`
+-- AUTO_INCREMENT for table `rw`
 --
 ALTER TABLE `rw`
   MODIFY `rw_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
